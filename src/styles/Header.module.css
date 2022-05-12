@@ -1,0 +1,64 @@
+.header {
+  background: #222;
+  color: #fff;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navContainer h1 {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.navContainer nav {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.navContainer button {
+  position: relative;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #eaeaea;
+  background: none;
+  border: none;
+}
+
+.navContainer button:not(.activeClass)::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: #eaeaea;
+  left: 0;
+  bottom: -5px;
+  transform: scale(0, 1);
+  transition: transform 0.25s ease;
+  transform-origin: 0 100%;
+}
+
+.navContainer button:not(.activeClass):hover::before {
+  transform: scale(1, 1);
+}
+
+.navContainer button.activeClass::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background: #eaeaea;
+  bottom: -5px;
+  left: 0;
+}
